@@ -1,7 +1,7 @@
 <template>
   <div>
     <h2 class="sub-header">英雄列表</h2>
-    <router-link class="btn btn-success" :to="{ name: 'heroadd' }">Add</router-link>
+    <router-link class="btn btn-success" :to="{name: 'heroadd'}">Add</router-link>
     <div class="table-responsive">
       <table class="table table-striped">
         <thead>
@@ -18,7 +18,7 @@
             <td>{{item.name}}</td>
             <td>{{item.gender}}</td>
             <td>
-              <a href="edit.html">edit</a>
+              <router-link :to="{name: 'heroedit', params: {id: item.id}}">edit</router-link>
               &nbsp;&nbsp;
               <a href="#" @click.prevent="handleDelete(item.id)">delete</a>
             </td>
